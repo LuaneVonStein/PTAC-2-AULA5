@@ -12,8 +12,6 @@ setLista([...lista,{
 }])
 }
 
-
-}
      return (
         <div>
             <h1>Lista de Atividades</h1>
@@ -30,3 +28,4 @@ setLista([...lista,{
            
         </div>
     );
+     }
