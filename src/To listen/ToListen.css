@@ -1,0 +1,19 @@
+body{
+    background-image: url('https://img.freepik.com/fotos-premium/joias-com-aneis-de-diamante-e-colares-em-exibicao-na-vitrine-de-uma-loja-de-varejo-de-luxo_293060-5163.jpg?w=1380');
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    border-color: rgb(0, 0, 0);
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.438);
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
