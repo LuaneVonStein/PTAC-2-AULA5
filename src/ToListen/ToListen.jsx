@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./ToListen.css"
 
 export default function ToListen() {
 
-    const listalocalStorag =  localStorage.getItem("Lista");
+    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
     const [atividade, setAtividade] = useState("");
-    const [lista, setLista] = useState([]);
-    const [id, setId] = useState(1);
+    const [lista, setLista] = useState(listaLocalStorage||[]);
+    const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1||1);
     
-useEffect(() => { localStorage.setItem ("Lista", JSON.stringify(lista))},);
+    useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista));}, [lista]);
 
     const salvar = (e) => {
         e.preventDefault();
@@ -44,8 +43,14 @@ useEffect(() => { localStorage.setItem ("Lista", JSON.stringify(lista))},);
         {lista.map((ativ) => 
         <ul key = {ativ.id}>
                 <li>
-        <p>{ativ.atividade}</p>
-         <button onClick={() => remover(ativ.id)}>REMOVE</button>
+                  <link to={'/detalhe/${objeto.id}'}>
+                    <P>{ativ.atividade}</P>
+                    </link>  
+       
+         <button onClick={() => 
+            remover(ativ.id)}>
+                REMOVE
+                </button>
         </li>
         </ul>
         )}
