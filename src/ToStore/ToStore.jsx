@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import "./ToListen.css"
+import "./ToStore.css"
 
-export default function ToListen() {
+export default function ToStore() {
 
     const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
     const [atividade, setAtividade] = useState("");
     const [lista, setLista] = useState(listaLocalStorage||[]);
-    const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1||1);
+    const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
     
     useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista));}, [lista]);
 
